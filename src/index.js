@@ -1,18 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './styles/app.scss';
-
-class App extends Component {
-	render() {
-		return (
-			<div>
-				Hello World!
-			</div>
-		)
-	}
-}
+import App from './containers/App'
 
 ReactDOM.render(
 	<App />,
 	document.getElementById('root')
-)
+);
