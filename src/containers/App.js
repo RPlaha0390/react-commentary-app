@@ -1,13 +1,16 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
+import Commentary from './Commentary';
 import '../styles/App.scss';
 
 class App extends Component {
 	render() {
 		return (
-			<Fragment>
-				<p>Hello World!</p>
-			</Fragment>
+			<div className="page">
+				<div className="page__container">
+					<Commentary />
+				</div>
+			</div>
 		)
 	}
 }
