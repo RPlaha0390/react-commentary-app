@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 const Timeline = ({
   event
 }) => {
-	return (
-    <div className="timeline__group">
+  return (
+    <div data-timeline-id={ event.minute } className="timeline__group">
       <div className="timeline__box">
         <div className="timeline__time">
           <span className="timeline__minute">{ event.minute }</span>       
@@ -17,7 +17,7 @@ const Timeline = ({
         </div>
       </div>
     </div>
-	);
+  );
 }
 
 /**

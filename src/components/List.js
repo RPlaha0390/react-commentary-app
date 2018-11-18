@@ -5,14 +5,14 @@ const List = ({
   keyMoment,
   onClick
 }) => {
-	return (
-		<div className="list__group">
+  return (
+    <div data-key-moments-id={ keyMoment.minute } className="list__group" onClick={ onClick }>
       <li className="list__item">
-      	<span>{ keyMoment.minute }</span> 
-      	<span>{ keyMoment.event }</span>
+        <span>{ keyMoment.minute }</span> 
+        <span>{ keyMoment.event }</span>
       </li>
     </div>
-	);
+  );
 }
 
 /**
