@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 
 import Timeline from '../components/Timeline';
+import List from '../components/List';
 
 class Commentary extends Component {
 	/**
@@ -59,6 +60,24 @@ class Commentary extends Component {
 										<Timeline 
 											key={ index }
 											event={ event }
+										/>
+									)
+								}
+							</div>
+						</div>
+					)
+				}
+				{	
+					this.state.keyMoments && ( 
+						<div className="list">
+							<h1 className="list__heading">Key Moments</h1>
+							<div className="list__wrapper">
+								{
+									this.state.keyMoments.map((moment, index) => 
+										<List 
+											key={ index }
+											keyMoment={ moment }
+											onClick={() => this.getActiveMoment(moment.minute)}
 										/>
 									)
 								}
