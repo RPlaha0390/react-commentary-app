@@ -2,10 +2,14 @@
   order: 2;
 
   @media screen and (min-width: 768px) { 
-    width: 70%;
+    width: 60%;
     margin-right: 5%;
     float: left;
     order: 1;
+  }
+
+  @media screen and (min-width: 991px) { 
+    width: 70%;
   }
 
   .timeline__wrapper {
