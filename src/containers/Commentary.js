@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react';
 
+import Timeline from '../components/Timeline';
+
 class Commentary extends Component {
 	/**
 	 * constructor
@@ -35,22 +37,35 @@ class Commentary extends Component {
 				 * keyMoment keys that contain a value of true
 				 */
 				keyMoments: feed[0].commentary.filter(obj => {
-				  return obj.isKey === true
+					return obj.isKey === true
 				})
 			}));
 	}
 
 	/**
-   * render
-   * @return {JSX}
-   */
+	 * render
+	 * @return {JSX}
+	 */
 	render() {
-		console.log(this.state.commentaryFeed);
-		console.log(this.state.keyMoments);
-
 		return (
 			<Fragment>
-				<p>Hello World from Commentary.js</p>
+				{
+					this.state.commentaryFeed && (
+						<div className="timeline">
+							<h1 className="timeline__heading">Live Commentary</h1>
+							<div className="timeline__wrapper">
+								{
+									this.state.commentaryFeed.map((event, index) => 
+										<Timeline 
+											key={ index }
+											event={ event }
+										/>
+									)
+								}
+							</div>
+						</div>
+					)
+				}
 			</Fragment>
 		)
 	}
