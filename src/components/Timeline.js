@@ -5,10 +5,18 @@ const Timeline = ({
   event
 }) => {
 	return (
-    <Fragment>
-  		<p>{ event.minute }</p>
-      <p>{ event.commentary }</p>
-    </Fragment>
+    <div className="timeline__group">
+      <div className="timeline__box">
+        <div className="timeline__time">
+          <span className="timeline__minute">{ event.minute }</span>       
+        </div>
+        <div className="timeline__event">
+          <div className="timeline__content">
+            <p>{ event.commentary }</p>
+          </div>
+        </div>
+      </div>
+    </div>
 	);
 }
 

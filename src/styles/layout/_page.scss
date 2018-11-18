@@ -1,0 +1,12 @@
+.page{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.page__container{
+  padding: 30px 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}

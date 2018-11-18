@@ -1,0 +1,124 @@
+.timeline {
+
+	@media screen and (min-width: 768px) { 
+		width: 70%;
+		margin-right: 5%;
+		float: left;
+	}
+
+	.timeline__wrapper {
+		position: relative;
+
+		&:before {
+			content: "";
+			width: 4px;
+			height: 100%;
+			background-color: $uiTimelinePrimary;
+			position: absolute;
+			top: 0;
+
+			@media screen and (min-width: 768px) { 
+				left: 30px;
+			}
+		}
+
+		.timeline__group {
+			position: relative;
+
+			@media screen and (min-width: 768px) { 
+				padding-top: 30px;
+			}
+
+			&.flash {
+				.timeline__event {
+					-webkit-animation-name: flash-animation;
+					-webkit-animation-duration: 0.4s;
+					animation-name: flash-animation;
+					animation-duration: 0.5s;
+				}
+			}
+
+
+			&:not(:first-of-type) {
+				margin-top: 4rem;
+
+				@media screen and (min-width: 768px) { 
+					margin-top: 0;
+				}
+			}
+
+			.timeline__box {
+				position: relative;
+				padding-left: 20px;
+				padding-top: 70px;
+
+				@media screen and (min-width: 768px) { 
+					padding-left: 100px;
+					padding-top: 0;
+				}
+
+				&:not(:last-of-type) {
+					margin-bottom: 30px;
+				}
+
+				&:before {
+					content: "";
+					width: 90%;
+					height: 2px;
+					background-color: $uiTimelinePrimary;
+					position: absolute;
+					left: 0;
+					z-index: -1;
+					top: 90px;
+
+					@media screen and (min-width: 768px) { 
+						top: 50%;
+						transform: translateY(-50%);
+						left: 25px;  
+					}
+				}
+
+				.timeline__time {
+					min-width: 65px;				
+					position: absolute;
+					left: 0;
+					box-sizing: border-box;
+					padding: .5rem 1.5rem;
+					text-align: center;
+					background-color: $uiTimelinePrimary;
+					color: $white;
+					top: 0;
+
+					@media screen and (min-width: 768px) { 
+						top: 50%;
+						margin-top: -25px;
+						left: 7px;
+						padding: 0;
+						min-width: 50px;
+						min-height: 50px;
+						border-radius: 50px;
+					}
+
+					.timeline__minute {
+						font-weight: 700;
+						display: block;
+
+						@media screen and (min-width: 768px) { 
+							padding: 16px 15px;
+						}
+					}
+				}
+
+				.timeline__event {
+					padding: 1.5rem 2rem;
+					border-radius: 2px;
+					border-left: 3px solid $uiTimelinePrimary;
+					box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .12), 
+					0 1px 2px 0 rgba(0, 0, 0, .24);
+					background-color: $white;
+				}
+			}
+		}
+	}
+}
+
