@@ -9,7 +9,7 @@ const List = ({
     <div data-key-moments-id={ keyMoment.minute } className="list__group" onClick={ onClick }>
       <li className="list__item">
         <span>{ keyMoment.minute }</span> 
-        <span>{ keyMoment.event }</span>
+        <span className={'icon ' + keyMoment.event.toLowerCase() }>{ keyMoment.event }</span>
       </li>
     </div>
   );

@@ -1,0 +1,19 @@
+.icon {
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-left: 30px;  /* width of the image plus a little extra padding */
+  &.card {
+    &.yellow {
+      background-image: url('../assets/card-yellow.svg');  
+    }  
+    &.red {
+      background-image: url('../assets/card-red.svg');  
+    }  
+  }
+  &.goal {
+    background-image: url('../assets/goal.svg');  
+  }
+  &.save {
+    background-image: url('../assets/save.svg');  
+  }
+}

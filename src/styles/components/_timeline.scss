@@ -1,9 +1,11 @@
 .timeline {
+  order: 2;
 
   @media screen and (min-width: 768px) { 
     width: 70%;
     margin-right: 5%;
     float: left;
+    order: 1;
   }
 
   .timeline__wrapper {
@@ -32,6 +34,10 @@
       &.timeline__group--active {
         .timeline__event {
           background: $uiTimelinePrimary !important;
+
+          p {
+            color: $white;
+          }
         }
       }
 

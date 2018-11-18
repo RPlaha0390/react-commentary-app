@@ -17,6 +17,8 @@ class Commentary extends Component {
       commentaryFeed: [],
       keyMoments: []
     }
+
+    this.setActive = this.setActive.bind(this);
   }
 
   /**
@@ -44,18 +46,27 @@ class Commentary extends Component {
   }
 
   /**
-   * set active class to element if element id is equal to event id
+   * Set active class to element if element id is equal to event id
    * @param 'string'
    */
   setActive(event) {
     const keyMomentsId = parseInt(event.currentTarget.getAttribute('data-key-moments-id'));
+    const activeClass = 'timeline__group--active';
     let timelineId;
 
     document.querySelectorAll('.timeline__group').forEach((element, index) => {
       timelineId = parseInt(element.getAttribute('data-timeline-id'));
       keyMomentsId === timelineId ? 
-        element.classList.add('timeline__group--active') 
-      : element.classList.remove('timeline__group--active');
+        element.classList.add(activeClass) 
+      : element.classList.remove(activeClass);
+    });
+
+    /**
+     * Scroll to active class
+     */
+    document.querySelector('.timeline__group--active').scrollIntoView({ 
+      behavior: 'smooth', 
+      block: 'center' 
     });
   }
 
